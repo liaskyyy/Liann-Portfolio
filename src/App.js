@@ -9,7 +9,7 @@ import Footer from "./layouts/Footer";
 
 function App() {
   return (
-    <div style={{ backgroundColor: "#eceeed", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#0000", minHeight: "100vh" }}>
       <Header />
       <Home />
       <About />

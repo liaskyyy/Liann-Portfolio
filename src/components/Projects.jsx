@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import orgShirt from "../assets/REVISED ORG POLO SHIRT.png";
 import cherryTomato from "../assets/CHERRY TOMATO LOGO w TEXT-03.png";
 import frog from "../assets/pepeTheFrog.png";
 import tmc from "../assets/tmc-logo.jpg";
-
-
+import logofolio from "../assets/logofolio.png";
 
 export default function Projects() {
   const [tab, setTab] = useState("it");
 
-  React.useEffect(() => {
+  useEffect(() => {
     const applyFromHash = () => {
       if (window.location.hash === "#projects-design") setTab("design");
       if (window.location.hash === "#projects-it") setTab("it");
@@ -53,92 +52,89 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="mt-10" id="projects-it">
+        <div className="mt-10">
           {tab === "it" ? <ItProjects /> : <DesignProjects />}
         </div>
-        <div id="projects-design" className="sr-only" aria-hidden></div>
       </div>
     </section>
   );
 }
-
 function Card({ title, description, image, link }) {
-  const [open, setOpen] = useState(false);
-
   return (
-    <>
-      <div className="card bg-base-100 w-96 shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <figure
-          className="bg-white flex items-center justify-center h-48 w-full cursor-pointer"
-          onClick={() => setOpen(true)}
-        >
-          <img src={image} alt={title} className="object-contain h-full w-full" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{title}</h2>
-          <p>{description}</p>
-          {link && (
-            <div className="card-actions justify-end">
-              <a
-                href={link}
-                className="btn btn-primary"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View Project
-              </a>
-            </div>
+    <div className="bg-white dark:bg-gray-900 shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden flex flex-col">
+      {/* Image */}
+      <figure className="w-full h-56 overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
+      </figure>
+
+      {/* Content */}
+      <div className="flex flex-col flex-grow p-6">
+        <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+          {title}
+        </h2>
+        <p className="mt-3 flex-grow text-gray-700 dark:text-gray-300 leading-relaxed">
+          {description}
+        </p>
+
+        {/* Button aligned right */}
+        <div className="mt-6 flex justify-end">
+          {link ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              className="px-5 py-2 bg-[#3246ea] text-white rounded-full font-medium hover:bg-[#2536b3] transition-colors duration-300"
+            >
+              View Project
+            </a>
+          ) : (
+            <button
+              disabled
+              className="px-5 py-2 bg-gray-300 text-gray-500 rounded-full font-medium cursor-not-allowed"
+            >
+              View Project
+            </button>
           )}
         </div>
       </div>
-
-      {open && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
-          onClick={() => setOpen(false)}
-        >
-          <img
-            src={image}
-            alt={title}
-            className="max-h-[80vh] max-w-[90vw] object-contain shadow-2xl rounded"
-          />
-        </div>
-      )}
-    </>
+    </div>
   );
 }
-
 
 
 
 
 function ItProjects() {
-const items = [
-  {
-    title: "Cherry Tomato App (Pomodoro)",
-    description:
-      "Created the UI design for our capstone project — a Pomodoro timer app with task management and progress tracking features.",
-    image: cherryTomato,
-    link: "https://www.figma.com/design/SUhaT4WfdsFubPVW3eOMw9/Cherry-Tomato?node-id=0-1&t=rLvc2qtTrgeSSMsW-1"
-    
-  },
-  {
-    title: "Pepe the Frog Mini Game",
-    description:
-      "Developed a fun mini game using Godot, featuring Pepe the Frog as the main character. Focused on simple mechanics, smooth controls, and engaging gameplay.",
-    image: frog,
-    link: "https://github.com/liaskyyy/pepethefroggame.git",
-  },
-  {
-    title: "TMC Website",
-    description:
-      "Developed a responsive website for a gymnastics sports academy, featuring programs, coaches, and events with user-friendly navigation.",
-    image: tmc,
-    link: "https://github.com/liaskyyy/tmc-website.git",
-  },
-];
+  const items = [
+    {
+      title: "Cherry Tomato App (Pomodoro)",
+      description:
+        "Created the UI design for our capstone project — a Pomodoro timer app with task management and progress tracking features.",
+      image: cherryTomato,
+      link: "https://www.figma.com/design/SUhaT4WfdsFubPVW3eOMw9/Cherry-Tomato?node-id=0-1&t=rLvc2qtTrgeSSMsW-1",
+    },
+    {
+      title: "Pepe the Frog Mini Game",
+      description:
+        "Developed a fun mini game using Godot, featuring Pepe the Frog as the main character. Focused on simple mechanics, smooth controls, and engaging gameplay.",
+      image: frog,
+      link: "https://github.com/liaskyyy/pepethefroggame.git",
+    },
+    {
+      title: "TMC Website",
+      description:
+        "Developed a responsive website for a gymnastics sports academy, featuring programs, coaches, and events with user-friendly navigation.",
+      image: tmc,
+      link: "https://github.com/liaskyyy/tmc-website.git",
+    },
+  ];
+
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {items.map((it) => (
         <Card key={it.title} {...it} />
       ))}
@@ -147,17 +143,25 @@ const items = [
 }
 
 function DesignProjects() {
-const items = [
-  {
-    title: "JPSSITE ORG SHIRT",
-    description:
-      "Designed the official organization shirt for JPSSITE, combining creativity and branding. Recognized as the winning design.",
-    image: orgShirt,
-  },
-];
+  const items = [
+    {
+      title: "JPSSITE ORG SHIRT",
+      description:
+        "Designed the official organization shirt for JPSSITE, combining creativity and branding. Recognized as the winning design.",
+      image: orgShirt,
+      link: "#", 
+    },
+    {
+      title: "Logofolio",
+      description:
+        "30 day logo challenge by Logocore. Created unique logos daily, exploring various styles and concepts to enhance my design skills.",
+      image: logofolio,
+      link: "https://www.behance.net/gallery/130877917/Logofolio-Vol-01", 
+    },
+  ];
 
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {items.map((it) => (
         <Card key={it.title} {...it} />
       ))}
