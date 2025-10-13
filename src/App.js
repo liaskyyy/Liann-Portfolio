@@ -7,6 +7,7 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./layouts/Footer";
 
+
 function App() {
   return (
     <div style={{ backgroundColor: "#0000", minHeight: "100vh" }}>
@@ -17,6 +18,7 @@ function App() {
       <Experience />
       <Contact />
       <Footer />
+      
     </div>
   );
 }
