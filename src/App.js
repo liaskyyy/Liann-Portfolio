@@ -6,19 +6,25 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./layouts/Footer";
+import TechStack from "./components/TechStack";
+
+
 
 
 function App() {
   return (
+    
     <div style={{ backgroundColor: "#0000", minHeight: "100vh" }}>
       <Header />
       <Home />
+  
       <About />
+      <TechStack />
       <Projects />
       <Experience />
       <Contact />
       <Footer />
-      
+
     </div>
   );
 }
