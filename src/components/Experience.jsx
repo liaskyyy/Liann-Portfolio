@@ -61,7 +61,7 @@ export default function Experience() {
                   viewport={{ once: true }}
                 />
 
-                {/* Content Box */}
+
                 <div
                   className={`bg-white dark:bg-gray-900 p-2 rounded-2xl shadow-lg border border-gray-200 dark:border-white/2 w-[400px] ${
                     isLeft ? "ml-6 text-left" : "mr-6 text-left"

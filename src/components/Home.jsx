@@ -1,53 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import LiannPhoto from "../assets/liannphoto.png";
 import resume from "../assets/LiannGonzalesResume.pdf";
-import NasaApod from "./NasaApod";
-
+import BibleVerse from "./BibleVerse";
+import Weather from "./Weather";
 
 function Home() {
-  const [quote, setQuote] = useState("Loading inspiration...");
   const [flipped, setFlipped] = useState(false);
-  const [apodData, setApodData] = useState(null);
 
-  useEffect(() => {
-    fetch("https://uselessfacts.jsph.pl/api/v2/facts/random?language=en")
-      .then((res) => res.json())
-      .then((data) =>
-        setQuote(data?.text ? `“${data.text}”` : "“Stay curious, keep creating.” — Liann Gonzales")
-      )
-      .catch(() => setQuote("“Stay curious, keep creating.” — Liann Gonzales"));
-  }, []);
-
-  const fetchApod = async () => {
-    try {
-      const res = await fetch(
-        "https://api.nasa.gov/planetary/apod?api_key=ts34OsW3aQnVdS5Tg9EewmYJkagxwO9sZHOoTc9l"
-      );
-      const data = await res.json();
-      setApodData(data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const handleFlip = async () => {
-    await fetchApod();
+  const handleFlip = () => {
     setFlipped(!flipped);
   };
 
   return (
     <motion.section
       id="home"
-      className="pt-28 sm:pt-32 pb-16 bg-base-100 dark:bg-gray-950"
+      className="pt-28 sm:pt-32 pb-16 bg-base-100 dark:bg-gray-950 relative"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
     >
+
+      <div className="absolute top-6 right-6">
+        <Weather />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
-        {/* Left: Flip Card */}
+
         <div className="flex justify-center md:justify-start">
           <motion.div
             onClick={handleFlip}
@@ -56,29 +37,36 @@ function Home() {
             animate={{ rotateY: flipped ? 180 : 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Front: Profile Picture */}
+
             <div
-              className="absolute w-full h-full rounded-2xl shadow-2xl overflow-hidden backface-hidden"
+              className="absolute w-full h-full rounded-2xl shadow-2xl overflow-hidden flex justify-center items-center p-4 text-center"
               style={{ backfaceVisibility: "hidden" }}
             >
               <img
                 src={LiannPhoto}
                 alt="Liann Gonzales"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-2xl"
               />
             </div>
 
-            {/* Back: NASA APOD */}
+ 
             <div
-              className="absolute w-full h-full rounded-2xl shadow-2xl overflow-hidden bg-white dark:bg-gray-900 flex justify-center items-center p-4 backface-hidden"
-              style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+              className="absolute w-full h-full rounded-2xl shadow-2xl overflow-hidden flex justify-center items-center p-4 text-center"
+              style={{
+                backfaceVisibility: "hidden",
+                transform: "rotateY(180deg)",
+              }}
             >
-              {apodData ? <NasaApod apodData={apodData} /> : <p>Loading NASA...</p>}
+              <img
+                src={LiannPhoto}
+                alt="Liann Gonzales"
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
           </motion.div>
         </div>
 
-        {/* Right: Info */}
+
         <div>
           <motion.h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">
             Liann Gonzales
@@ -101,9 +89,11 @@ function Home() {
             />
           </motion.div>
 
-          <motion.p className="mt-6 text-lg italic text-gray-600 dark:text-gray-300 max-w-lg">
-            {quote}
-          </motion.p>
+
+          <div className="mt-6">
+            <BibleVerse />
+          </div>
+
 
           <motion.div className="mt-8 flex flex-wrap gap-3">
             <a

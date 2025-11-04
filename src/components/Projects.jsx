@@ -53,7 +53,7 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Content */}
+
         <div className="mt-10">{tab === "it" ? <ItProjects /> : <DesignProjects />}</div>
       </div>
     </section>
@@ -63,12 +63,12 @@ export default function Projects() {
 function Card({ title, description, image, link, download }) {
   return (
     <div className="bg-white dark:bg-gray-900 shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden flex flex-col">
-      {/* Image */}
+
       <figure className="w-full h-56 overflow-hidden">
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </figure>
 
-      {/* Content */}
+
       <div className="flex flex-col flex-grow p-6">
         <h2 className="text-lg font-bold text-gray-900 dark:text-white">
           {title}
@@ -77,7 +77,7 @@ function Card({ title, description, image, link, download }) {
           {description}
         </p>
 
-        {/* Button aligned right */}
+
         <div className="mt-6 flex justify-end">
           {link ? (
             <a
@@ -103,9 +103,7 @@ function Card({ title, description, image, link, download }) {
   );
 }
 
-/* ================================
-   IT PROJECTS
-================================ */
+
 function ItProjects() {
   const items = [
     {
@@ -140,9 +138,7 @@ function ItProjects() {
   );
 }
 
-/* ================================
-   DESIGN PROJECTS
-================================ */
+
 function DesignProjects() {
   const items = [
     {

@@ -17,7 +17,6 @@ function App() {
     <div style={{ backgroundColor: "#0000", minHeight: "100vh" }}>
       <Header />
       <Home />
-  
       <About />
       <TechStack />
       <Projects />
