@@ -5,6 +5,9 @@ import LiannFront from "../assets/LiannFront.png";
 import LiannBack from "../assets/LiannBack.png";
 import resume from "../assets/LiannGonzalesResume.pdf";
 import BibleVerse from "./BibleVerse";
+import CatFact from "./CatFact";
+
+
 
 
 function Home() {
@@ -13,6 +16,7 @@ function Home() {
   const handleFlip = () => {
     setFlipped(!flipped);
   };
+  
 
   return (
     <motion.section
@@ -89,6 +93,12 @@ function Home() {
           <div className="mt-4">
             <BibleVerse />
           </div>
+          
+          {/* <div className="mt-4">
+            <CatFact />
+          </div> */}
+
+
 
           <motion.div className="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
             <a
