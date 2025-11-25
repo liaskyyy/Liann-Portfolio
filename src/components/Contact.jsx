@@ -19,11 +19,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 px-6">
-      <div className="max-w-2xl mx-auto text-center">
-        {/* Heading */}
+    <section
+      id="contact"
+      className="py-16 px-6 bg-base-100 text-base-content transition-colors"
+    >
+      <div className="text-base-content dark:text-white max-w-2xl mx-auto text-center">
+
+        {/* Header */}
         <motion.h2
-          className="text-3xl font-bold mb-4 text-primary"
+          className="text-3xl font-bold mb-4 text-primary dark:text-primary-content"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -32,9 +36,8 @@ export default function Contact() {
           Contact Me
         </motion.h2>
 
-        {/* Subtext */}
         <motion.p
-          className="mb-10 text-base text-base-content"
+          className="mb-10 text-base text-base-content dark:text-base-content/90"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -54,7 +57,7 @@ export default function Contact() {
           <motion.a
             variants={itemVariants}
             href="mailto:lianngonzales7@gmail.com"
-            className="btn btn-outline btn-primary flex items-center justify-center gap-2"
+            className="btn btn-outline btn-primary dark:btn-primary dark:text-primary-content flex items-center gap-2"
           >
             <Mail className="w-5 h-5" /> lianngonzales7@gmail.com
           </motion.a>
@@ -64,7 +67,7 @@ export default function Contact() {
             href="https://github.com/liaskyyy"
             target="_blank"
             rel="noreferrer"
-            className="btn btn-outline btn-primary flex items-center justify-center gap-2"
+            className="btn btn-outline btn-primary dark:btn-primary dark:text-primary-content flex items-center gap-2"
           >
             <Github className="w-5 h-5" /> github.com/liaskyyy
           </motion.a>
@@ -74,7 +77,7 @@ export default function Contact() {
             href="https://www.behance.net/lianngonza304c"
             target="_blank"
             rel="noreferrer"
-            className="btn btn-outline btn-primary flex items-center justify-center gap-2"
+            className="btn btn-outline btn-primary dark:btn-primary dark:text-primary-content flex items-center gap-2"
           >
             <BsBehance className="w-5 h-5" /> behance.net/lianngonza304c
           </motion.a>

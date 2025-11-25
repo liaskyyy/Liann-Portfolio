@@ -13,8 +13,7 @@ import TechStack from "./components/TechStack";
 
 function App() {
   return (
-    
-    <div style={{ backgroundColor: "#0000", minHeight: "100vh" }}>
+    <div className="min-h-screen bg-base-100 dark:bg-gray-900 transition-colors duration-300">
       <Header />
       <Home />
       <About />
@@ -23,7 +22,6 @@ function App() {
       <Experience />
       <Contact />
       <Footer />
-
     </div>
   );
 }
