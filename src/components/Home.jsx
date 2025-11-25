@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
-import LiannPhoto from "../assets/liannphoto.png";
+import LiannFront from "../assets/LiannFront.png";
+import LiannBack from "../assets/LiannBack.png";
 import resume from "../assets/LiannGonzalesResume.pdf";
 import BibleVerse from "./BibleVerse";
-import Weather from "./Weather";
+
 
 function Home() {
   const [flipped, setFlipped] = useState(false);
@@ -16,58 +17,54 @@ function Home() {
   return (
     <motion.section
       id="home"
-      className="pt-28 sm:pt-32 pb-16 bg-base-100 dark:bg-gray-950 relative"
+      className="pt-24 sm:pt-28 pb-16 bg-base-100 dark:bg-gray-950 relative flex items-center justify-center min-h-screen"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
     >
 
-      <div className="absolute top-6 right-6">
-        <Weather />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
-
-        <div className="flex justify-center md:justify-start">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 items-center justify-center gap-8">
+        {/* Image Section */}
+        <div className="flex justify-center md:justify-end">
           <motion.div
             onClick={handleFlip}
-            className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 cursor-pointer relative"
+            className="w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 cursor-pointer relative"
             style={{ transformStyle: "preserve-3d" }}
             animate={{ rotateY: flipped ? 180 : 0 }}
             transition={{ duration: 0.8 }}
           >
-
+            {/* Front Side */}
             <div
-              className="absolute w-full h-full rounded-2xl shadow-2xl overflow-hidden flex justify-center items-center p-4 text-center"
+              className="absolute w-full h-full rounded-2xl overflow-hidden flex justify-center items-center"
               style={{ backfaceVisibility: "hidden" }}
             >
               <img
-                src={LiannPhoto}
-                alt="Liann Gonzales"
+                src={LiannFront}
+                alt="Liann Gonzales Front"
                 className="w-full h-full object-cover rounded-2xl"
               />
             </div>
 
- 
+            {/* Back Side */}
             <div
-              className="absolute w-full h-full rounded-2xl shadow-2xl overflow-hidden flex justify-center items-center p-4 text-center"
+              className="absolute w-full h-full rounded-2xl overflow-hidden flex justify-center items-center"
               style={{
                 backfaceVisibility: "hidden",
                 transform: "rotateY(180deg)",
               }}
             >
               <img
-                src={LiannPhoto}
-                alt="Liann Gonzales"
+                src={LiannBack}
+                alt="Liann Gonzales Back"
                 className="w-full h-full object-cover rounded-2xl"
               />
             </div>
           </motion.div>
         </div>
 
-
-        <div>
+        {/* Text Section */}
+        <div className="flex flex-col justify-center text-center md:text-left">
           <motion.h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">
             Liann Gonzales
           </motion.h1>
@@ -89,13 +86,11 @@ function Home() {
             />
           </motion.div>
 
-
-          <div className="mt-6">
+          <div className="mt-4">
             <BibleVerse />
           </div>
 
-
-          <motion.div className="mt-8 flex flex-wrap gap-3">
+          <motion.div className="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
             <a
               href={resume}
               download="LiannGonzalesResume.pdf"

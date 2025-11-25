@@ -29,7 +29,7 @@ export default function EmailForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-md"
+      className="max-w-lg mx-auto p-6 rounded-2xl shadow-md"
     >
       <h3 className="text-2xl font-semibold mb-4 text-center text-[#3246ea]">
         Send Me a Message
