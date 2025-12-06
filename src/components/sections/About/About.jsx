@@ -18,9 +18,9 @@ function About() {
         </h2>
 
         <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-          Hi, I’m <strong>Liann Gonzales</strong> — an aspiring <strong>IT professional </strong> 
+          Hi, I'm <strong>Liann Gonzales</strong> — an aspiring <strong>IT professional </strong> 
            and <strong>digital creative</strong> from <strong>Bulacan, Philippines</strong>. 
-          I’m passionate about technology, design, and continuous learning. My goal is to 
+          I'm passionate about technology, design, and continuous learning. My goal is to 
           bridge creativity and functionality by crafting meaningful digital experiences 
           that make everyday tasks simpler and more enjoyable.
         </p>
@@ -35,7 +35,7 @@ function About() {
 
         <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
           Outside academics, I express my creativity through <strong>graphic design</strong> and 
-          <strong> digital art</strong>. I’ve worked on logo designs, brand identities, and 
+          <strong> digital art</strong>. I've worked on logo designs, brand identities, and 
           illustrations that reflect personality and purpose. My experience as a 
           <strong> gymnastics coach</strong> and <strong>technical director</strong> has also 
           strengthened my teamwork, leadership, and attention to detail — qualities that I apply 
@@ -43,7 +43,7 @@ function About() {
         </p>
 
         <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-          I’m constantly learning, experimenting, and improving — whether it’s mastering new 
+          I'm constantly learning, experimenting, and improving — whether it's mastering new 
           technologies, designing better user flows, or collaborating with others on innovative 
           ideas. Ultimately, I aspire to become a <strong>versatile IT professional</strong> who 
           blends technical knowledge with creative thinking to make a positive impact in the 

@@ -1,5 +1,5 @@
 import React from "react";
-import Weather from "./Weather";
+import Weather from "../api/Weather";
 import ThemeToggle from "./ThemeToggle"; 
 
 function Header() {
