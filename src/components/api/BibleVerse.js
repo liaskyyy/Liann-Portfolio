@@ -33,7 +33,7 @@ function BibleVerse() {
     };
 
     fetchVerse();
-  }, []);
+  }, [versesList]);
 
   return (
     <p className="mt-6 text-lg italic text-gray-600 dark:text-gray-300 max-w-lg">
