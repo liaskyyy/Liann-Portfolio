@@ -4,9 +4,8 @@ import { ReactTyped } from "react-typed";
 import LiannFront from "../assets/LiannFront.png";
 import LiannBack from "../assets/LiannBack.png";
 import resume from "../assets/LiannGonzalesResume.pdf";
-import BibleVerse from "../../api/BibleVerse";
-import CatFact from "../../api/CatFact";
-import CircularText from "../../ui/CircularText";
+import BibleVerse from "./api/BibleVerse";
+import CircularText from "./ui/CircularText";
 
 function Home() {
   const [flipped, setFlipped] = useState(false);
@@ -120,9 +119,6 @@ function Home() {
             <BibleVerse />
           </div>
           
-          {/* <div className="mt-4">
-            <CatFact />
-          </div> */}
 
 
 

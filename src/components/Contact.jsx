@@ -1,7 +1,7 @@
 import React from "react";
 import { Mail, Github } from "lucide-react";
 import { BsBehance } from "react-icons/bs";
-import EmailForm from "../../api/EmailForm";
+import EmailForm from "./api/EmailForm";
 import { motion } from "framer-motion";
 
 export default function Contact() {
